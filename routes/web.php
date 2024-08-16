@@ -9,6 +9,7 @@ Route::get('/', function () {
 
 Route::get('/calls', [CallController::class, 'index']);
 Route::get('/tickets/create', [CallController::class, 'create']);
+Route::put('/tickets/{id}/update-situation', [CallController::class, 'updateSituation'])->name('tickets.updateSituation');
 
 //rota necessaria para o funcionamento da logica da aplicação
 Route::post('tickets', [CallController::class, 'store']);

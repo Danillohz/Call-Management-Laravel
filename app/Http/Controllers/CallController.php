@@ -2,38 +2,76 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Call;
 use Illuminate\Http\Request;
+use App\Models\Call;
+use App\Models\Category;
+use App\Models\Situation;
+use Carbon\Carbon;
 
 class CallController extends Controller
 {
-    public function index(){
+    // Método para listar todos os chamados
+    public function index()
+    {
+        // Pega todos os chamados com suas categorias associadas
+        $calls = Call::with('category', 'situation')->get();
 
-
-        $calls = Call::all();
-
-        return view ('calls', ['calls' => $calls]);
-     
+        // Retorna a view com os dados dos chamados
+        return view('calls', ['calls' => $calls]);
     }
 
-    public function create(){
-        //retorna a view de criação de chamados
-        return view('tickets.create');
+    // Método para mostrar o formulário de criação
+    public function create()
+    {
+        $categories = Category::all();
+        $situations = Situation::all();
+        return view('tickets.create', ['categories' => $categories, 'situations' => $situations]);
     }
 
-    public function store(Request $request){
+    public function updateSituation(Request $request, $id)
+    {
+        $request->validate([
+            'situation_id' => 'required|exists:situations,id'
+        ]);
 
-        //Funcionalidade que cria no bd os dados do form 
-        $call = new Call;
+        $call = Call::findOrFail($id);
+        $call->situation_id = $request->situation_id;
 
-        $call->title = $request->title;
-        $call->description = $request->description;
+        //Caso o chamado seja resolvido altera o valor de resolved_at para a data atual caso o chamado seja resolvido
+        if ($request->input('situation_id') == 3) {
+            $call->resolved_at = Carbon::now();
+        } else {
+            $call->resolved_at = null;
+        }
 
-        //Persiste os dados 
         $call->save();
 
-        //Após isso retorna para a lista de chamados e exibe uma mensagem
-        return redirect('/calls')->with('msg', 'Chamado criado com sucesso!');
+        return redirect()->back()->with('msg', 'Situação atualizada com sucesso!');
+    }
 
+    // Método para armazenar um novo chamado
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'category_id' => 'required|exists:categories,id',
+            
+        ]);
+
+        $callData = $request->all();
+        // Definir a situação como 'novo'
+        if (!$request->has('situation_id')) {
+            $newSituation = Situation::where('name', 'novo')->first();
+            if ($newSituation) {
+                $callData['situation_id'] = $newSituation->id;
+            } else {
+                return redirect('/tickets/create')->with('error', 'Situação "novo" não encontrada. Por favor, adicione essa situação antes de criar um chamado.');
+            }
+        }
+
+        Call::create($callData);
+
+        return redirect('/calls')->with('msg', 'Chamado criado com sucesso!');
     }
 }

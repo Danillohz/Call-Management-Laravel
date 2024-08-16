@@ -10,11 +10,21 @@ body{
     position: relative;
 }
 
-/* Estilo da página chamados */
-
 .row{
     padding: 0px;
 }
+
+/* Estilo das mensagens */
+.msg{
+    background-color: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6CB;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilo da página chamados */
 
 #calls-container{
     width: 100%;
@@ -25,14 +35,65 @@ body{
 }
 
 #cards-container{
+    background-color: #ededed;
+    color: rgb(0, 0, 0);
+    border: 6px solid #dedede;
+    border-radius: 10px;
     width: 80%;
+    max-height: 70vh;
+    overflow-y: auto;
     margin: auto;
-    padding: 0;
+    padding: 0 10px 10px 10px;
+    
 }
 
 #cards-container.call-card{
     padding: 0px;
 }
+
+.card-title-container {
+    width: 100%;
+    word-wrap: break-word;
+    
+}
+
+.card-title-container h5 {
+    margin: 0 0 2px 0;
+    white-space: normal;
+}
+
+.card-title-container p {
+    font-size: 10px;
+    margin: 0;
+    white-space: normal;
+}
+
+.card-body p{
+    font-size: 12px;
+    margin: 0px;
+
+}
+
+#link-create-container{
+    width: 80%;
+    margin: auto;
+    text-align: end;
+} 
+
+
+/* Modal das descrições */
+
+.modal-dialog-scrollable .modal-content {
+    max-height: calc(100vh - 1rem);
+    overflow-y: auto;
+}
+
+.modal-body {
+    overflow-y: auto;
+    max-height: 400px; /* Ajuste conforme necessário */
+    word-wrap: break-word; /* Força a quebra de palavras longas */
+}
+
 
 
 

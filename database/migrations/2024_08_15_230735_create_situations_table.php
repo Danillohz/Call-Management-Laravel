@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Situation;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,13 +12,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('calls', function (Blueprint $table) {
+        Schema::create('situations', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('description');
-            $table->timestamp('current_date')->nullable();
-            $table->timestamp('future_date')->nullable();
+            $table->string('name');
+            
         });
+
+        // Inserir as situações padrão
+        Situation::insert([
+            ['name' => 'novo'],
+            ['name' => 'pendente'],
+            ['name' => 'resolvido']
+        ]);
     }
 
     /**
@@ -25,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('calls');
+        Schema::dropIfExists('situations');
     }
 };
