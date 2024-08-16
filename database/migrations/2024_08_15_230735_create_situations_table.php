@@ -20,9 +20,9 @@ return new class extends Migration
 
         // Inserir as situações padrão
         Situation::insert([
-            ['name' => 'novo'],
-            ['name' => 'pendente'],
-            ['name' => 'resolvido']
+            ['name' => 'Novo'],
+            ['name' => 'Pendente'],
+            ['name' => 'Resolvido']
         ]);
     }
 

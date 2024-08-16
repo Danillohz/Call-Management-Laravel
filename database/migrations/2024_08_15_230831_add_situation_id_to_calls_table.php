@@ -10,6 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
+        //adiciona a coluna 'situation_id' na tabela 'calls'
         Schema::table('calls', function (Blueprint $table) {
             $table->foreignId('situation_id')->constrained('situations');
         });

@@ -1,13 +1,15 @@
 /* Globais */
 
 *{
- padding: 0;
+    padding: 0;
+
 }
 
 body{
-    min-height: 100vh;
-    padding-bottom: 100px;
+    
+    
     position: relative;
+    overflow-x: hidden;
 }
 
 .row{
@@ -16,18 +18,27 @@ body{
 
 /* Estilo das mensagens */
 .msg{
+    position: absolute;
+    top: 56px;
     background-color: #D4EDDA;
     color: #155724;
     border: 1px solid #C3E6CB;
     width: 100%;
     padding: 10px;
     text-align: center;
+    z-index: 1;
+}
+
+/* Estilo da página inicial */
+#callsPieChart {
+
 }
 
 /* Estilo da página chamados */
 
 #calls-container{
     width: 100%;
+    
 }
 
 #calls-container h2{
@@ -39,7 +50,8 @@ body{
     color: rgb(0, 0, 0);
     border: 6px solid #dedede;
     border-radius: 10px;
-    width: 80%;
+    width: 96%;
+    max-width: 800px;
     max-height: 70vh;
     overflow-y: auto;
     margin: auto;
@@ -68,6 +80,16 @@ body{
     white-space: normal;
 }
 
+#status-demonstration-ball{
+    border-radius: 100%;
+    width: 8px;
+    height: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.521);
+    margin-bottom: 7px;
+    background-color: #86e5ff;
+    
+}
+
 .card-body p{
     font-size: 12px;
     margin: 0px;
@@ -76,6 +98,7 @@ body{
 
 #link-create-container{
     width: 80%;
+    max-width: 800px;
     margin: auto;
     text-align: end;
 } 

@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //adiciona a coluna 'category_id' na tabela 'calls'
         Schema::table('calls', function (Blueprint $table) {
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
         });

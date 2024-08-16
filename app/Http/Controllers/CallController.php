@@ -10,9 +10,31 @@ use Carbon\Carbon;
 
 class CallController extends Controller
 {
+
+    public function percentual()
+    {
+        //Obter o início e fim do mês com carbon
+        $currentMonthStart = Carbon::now()->startOfMonth();
+        $currentMonthEnd = Carbon::now()->endOfMonth();
+
+        //total de chamados
+        $totalCalls = Call::whereBetween('current_date', [$currentMonthStart, $currentMonthEnd])->count();
+
+        $resolvedCallsInTime = Call::whereBetween('current_date', [$currentMonthStart, $currentMonthEnd])
+            ->whereNotNull('resolved_at')
+            ->whereColumn('resolved_at', '<=', 'future_date')
+            ->count();
+
+        //Calcula o percentual
+        $percentResolvedInTime = ($totalCalls > 0) ? ($resolvedCallsInTime / $totalCalls) * 100 : 0;
+        
+        return view('welcome', ['percentResolvedInTime' => $percentResolvedInTime]);
+    }
+
     // Método para listar todos os chamados
     public function index()
     {
+
         // Pega todos os chamados com suas categorias associadas
         $calls = Call::with('category', 'situation')->get();
 
@@ -49,6 +71,14 @@ class CallController extends Controller
         return redirect()->back()->with('msg', 'Situação atualizada com sucesso!');
     }
 
+    public function destroy($id)
+    {
+
+        Call::findOrFail($id)->delete();
+
+        return redirect('/calls');
+    }
+
     // Método para armazenar um novo chamado
     public function store(Request $request)
     {
@@ -56,7 +86,7 @@ class CallController extends Controller
             'title' => 'required',
             'description' => 'required',
             'category_id' => 'required|exists:categories,id',
-            
+
         ]);
 
         $callData = $request->all();

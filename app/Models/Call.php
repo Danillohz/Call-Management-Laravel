@@ -7,8 +7,8 @@ use Carbon\Carbon;
 
 class Call extends Model
 {
-    protected $dates = ['resolved_at'];
-    protected $fillable = ['title', 'description', 'current_date', 'future_date', 'category_id', 'situation_id'];
+    protected $dates = [ 'current_date', 'future_date', 'resolved_at'];
+    protected $fillable = ['title', 'description', 'category_id', 'situation_id'];
     public $timestamps = false; // Desativa os timestamps automáticos
     
     // Defina os valores dos campos current_date e future_date ao criar um novo registro
