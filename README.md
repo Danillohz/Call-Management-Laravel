@@ -4,7 +4,7 @@
 
 ## Requisitos
 Necessário ter em sua máquina:
-- [XAMPP](https://www.apachefriends.org/index.html)
+- [XAMPP](https://www.apachefriends.org/index.html) (PHP, MySQL, Apache)
 - PHP configurado no PATH do sistema
 - [Composer](https://getcomposer.org/)
 - [Git](https://git-scm.com/)
@@ -60,4 +60,9 @@ Necessário ter em sua máquina:
      ```
    - Clique no link que aparecerá no terminal (`http://127.0.0.1:8000` ou semelhante) para acessar a aplicação.
 
-Se precisar de ajuda ou mais informações, consulte a [documentação do Laravel](https://laravel.com/docs).
+## Possíveis erros
+1. **PHP não reconhecido pelo VS Code**
+    - Em **Este Computador** clique com o botão direito do mouse e vá para propriedades
+    - Após clique em **Configurações avançadas do sistema** e **Variáveis de Ambiente**
+    - Selecione **Path** clique em editar e depois em novo
+    - Coloque o caminho do PHP do XAMPP (`C:\xampp\php`)
