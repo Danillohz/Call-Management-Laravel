@@ -1,3 +1,5 @@
+# Diagrama dos relacionamentos das entidades do sistema.
+
 # Instruções para Instalação do Projeto Call Management Laravel
 
 ## Requisitos
