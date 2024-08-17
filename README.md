@@ -9,7 +9,7 @@
 -Composer
 -Git
 
-1 - Crie uma pasta e abra ela no seu VS Code ou no seu editor de preferência.
+1 - Crie uma pasta e abra ela no seu VS Code ou no seu editor de preferência.<br>
 2 - Após isso abra o terminal do VS Code e clone o repositório do GitHub com o seguinte código (git clone https://github.com/Danillohz/Call-Management-Laravel.git).
 3 - Entre no diretório do projeto usando o comando (cd Call-Management-Laravel).
 4 - Instale as Dependências com Composer usando o comando (composer install).
