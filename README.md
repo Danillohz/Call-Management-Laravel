@@ -1,19 +1,61 @@
+# Instruções para Instalação do Projeto Call Management Laravel
 
-## Diagrama dos relacionamentos das entidades do sistema.
+## Requisitos
+Necessário ter em sua máquina:
+- [XAMPP](https://www.apachefriends.org/index.html)
+- PHP configurado no PATH do sistema
+- [Composer](https://getcomposer.org/)
+- [Git](https://git-scm.com/)
 
-## Como instalar a build em sua máquina:
+## Como instalar a build em sua máquina
 
-### Requisitos:
--XAMPP
--PHP no path do sistema
--Composer
--Git
+1. **Crie uma pasta e abra no editor**:
+   - Crie uma nova pasta em seu sistema.
+   - Abra essa pasta no VS Code ou no editor de sua preferência.
 
-1 - Crie uma pasta e abra ela no seu VS Code ou no seu editor de preferência.<br>
-2 - Após isso abra o terminal do VS Code e clone o repositório do GitHub com o seguinte código (git clone https://github.com/Danillohz/Call-Management-Laravel.git).<br>
-3 - Entre no diretório do projeto usando o comando (cd Call-Management-Laravel).<br>
-4 - Instale as Dependências com Composer usando o comando (composer install).<br>
-5 - Depois de instalar as dependências copie o arquivo (.env.example) com o comando (cp .env.example .env).<br>
-6 - Gere uma nova chave de aplicativo utilizando o comando (php artisan key:generate) no terminal.<br>
-7 - No terminal, digite o comando (php artisan migrate) após perguntar se vc quer criar o banco de dados, digite (yes).<br>
-8 - Se tudo estiver nos conformes, no terminar digite (php artisan serve) e click no http://127.0.0.1:8000(ou semelhante) que aparecerá.<br>
+2. **Clone o repositório do GitHub**:
+   - Abra o terminal do VS Code.
+   - Clone o repositório com o seguinte comando:
+     ```sh
+     git clone https://github.com/Danillohz/Call-Management-Laravel.git
+     ```
+
+3. **Entre no diretório do projeto**:
+   - Navegue até o diretório do projeto clonado:
+     ```sh
+     cd Call-Management-Laravel
+     ```
+
+4. **Instale as dependências com Composer**:
+   - Execute o comando abaixo para instalar as dependências do projeto:
+     ```sh
+     composer install
+     ```
+
+5. **Configure o arquivo de ambiente**:
+   - Copie o arquivo `.env.example` para `.env`:
+     ```sh
+     cp .env.example .env
+     ```
+
+6. **Gere uma nova chave de aplicativo**:
+   - Gere uma nova chave de aplicativo executando:
+     ```sh
+     php artisan key:generate
+     ```
+
+7. **Execute as migrações do banco de dados**:
+   - Execute as migrações para criar as tabelas do banco de dados:
+     ```sh
+     php artisan migrate
+     ```
+   - Se o comando perguntar se você quer criar o banco de dados, digite `yes`.
+
+8. **Inicie o servidor local**:
+   - Inicie o servidor local do Laravel:
+     ```sh
+     php artisan serve
+     ```
+   - Clique no link que aparecerá no terminal (`http://127.0.0.1:8000` ou semelhante) para acessar a aplicação.
+
+Se precisar de ajuda ou mais informações, consulte a [documentação do Laravel](https://laravel.com/docs).
