@@ -1,5 +1,5 @@
 # Diagrama dos relacionamentos das entidades do sistema.
-![Screenshot do Projeto](images/screenshot.png)
+![Screenshot do Projeto](public/images/diagrama.png)
 
 # Instruções para Instalação do Projeto Call Management Laravel
 
