@@ -1,4 +1,4 @@
-<!--
+
 ## Diagrama dos relacionamentos das entidades do sistema.
 
 ## Como instalar a build em sua máquina:
@@ -17,4 +17,3 @@
 6 - Gere uma nova chave de aplicativo utilizando o comando (php artisan key:generate) no terminal.
 7 - No terminal, digite o comando (php artisan migrate) após perguntar se vc quer criar o banco de dados, digite (yes)
 8 - Se tudo estiver nos conformes, no terminar digite (php artisan serve) e click no http://127.0.0.1:8000(ou semelhante) que aparecerá.
--->
