@@ -45,15 +45,18 @@ Necessário ter em sua máquina:
      ```sh
      php artisan key:generate
      ```
+     
+7. **Execute o XAMPP no modo administrador**:
+   - Clique em start no Mysql e Apache
 
-7. **Execute as migrações do banco de dados**:
+8. **Execute as migrações do banco de dados**:
    - Execute as migrações para criar as tabelas do banco de dados:
      ```sh
      php artisan migrate
      ```
    - Se o comando perguntar se você quer criar o banco de dados, digite `yes`.
 
-8. **Inicie o servidor local**:
+9. **Inicie o servidor local**:
    - Inicie o servidor local do Laravel:
      ```sh
      php artisan serve
