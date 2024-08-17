@@ -39,6 +39,8 @@ Necessário ter em sua máquina:
      ```sh
      cp .env.example .env
      ```
+   - Dentro do arquivo .env Certifique-se de que DB_USERNAME e DB_PASSWORD condizem  com suas configurações
+    
 
 6. **Gere uma nova chave de aplicativo**:
    - Gere uma nova chave de aplicativo executando:
