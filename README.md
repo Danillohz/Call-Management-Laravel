@@ -76,5 +76,5 @@ Necessário ter em sua máquina:
 2. **Erro ao dar o comando composer install**
     - Vá para a pasta (`C:\xampp\php`)
     - Abra o arquivo php.ini
-    - Procure por (;extension=zip)
+    - Procure por (`;extension=zip`)
     - remova o ->(`;`), e salve o arquivo
