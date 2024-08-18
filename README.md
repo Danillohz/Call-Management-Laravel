@@ -77,4 +77,4 @@ Necessário ter em sua máquina:
     - Vá para a pasta (`C:\xampp\php`)
     - Abra o arquivo php.ini
     - Procure por (;extension=zip)
-    - remova o ->(;), e salve o arquivo
+    - remova o ->(`;`), e salve o arquivo
