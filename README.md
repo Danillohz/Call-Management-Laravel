@@ -74,7 +74,7 @@ Necessário ter em sua máquina:
     - Coloque o caminho do PHP do XAMPP (`C:\xampp\php`)
     - 
 2. **Erro ao dar o comando composer install**
-    - Vá para a pasta C:\xampp\php
+    - Vá para a pasta (`C:\xampp\php`)
     - Abra o arquivo php.ini
     - Procure por (;extension=zip)
     - remova o ->(;), e salve o arquivo
