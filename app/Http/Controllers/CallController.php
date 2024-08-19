@@ -45,6 +45,7 @@ class CallController extends Controller
     // Método para mostrar o formulário de criação
     public function create()
     {
+        
         $categories = Category::all();
         $situations = Situation::all();
         return view('tickets.create', ['categories' => $categories, 'situations' => $situations]);
@@ -75,9 +76,9 @@ class CallController extends Controller
     //Método para excluir um chamado pelo seu id
     public function destroy($id)
     {
-        
+            
         Call::findOrFail($id)->delete();
-
+    
         return redirect('/calls');
     }
 
