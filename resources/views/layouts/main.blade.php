@@ -8,7 +8,7 @@
     <title>@yield('title')</title>
 
     <!-- Importa o css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <!-- importa Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,9 +25,7 @@
 <body>
 
     <header>
-        @php
-            // Navbar para navegação entre as páginas
-        @endphp
+        {{-- Navbar para navegação entre as páginas --}}
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Teste</a>
@@ -52,18 +50,14 @@
     <main>
         <div class="container-fluid">
             <div class="row">
-                @php
-                    // Exibe uma msg quando chamado
-                @endphp
+                {{-- Exibe uma msg quando chamado --}}
                 @if (session('msg'))
                     <div class="alert position-absolute alert-success alert-dismissible fade show" role="alert">
                         {{ session('msg') }}
                     </div>
                 @endif
 
-                @php
-                    // Temporizador para a mensagem desaparecer depois de um tempo
-                @endphp
+                {{-- Temporizador para a mensagem desaparecer depois de um tempo --}}
                 <script>
                   document.addEventListener('DOMContentLoaded', function () {
                       setTimeout(function() {
@@ -72,7 +66,7 @@
                               let bsAlert = new bootstrap.Alert(alert);
                               bsAlert.close();
                           }
-                      }, 1000); // 5000ms = 5 segundos
+                      }, 1500); // 5000ms = 5 segundos
                   });
               </script>
 
