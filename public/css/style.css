@@ -1,38 +1,126 @@
 /* Globais */
 
 *{
- padding: 0;
+    padding: 0;
+
 }
 
 body{
-    min-height: 100vh;
-    padding-bottom: 100px;
+    
+    
     position: relative;
+    overflow-x: hidden;
 }
-
-/* Estilo da página chamados */
 
 .row{
     padding: 0px;
 }
 
+/* Header */
+
+
+
+/* Estilo das mensagens */
+.msg{
+    position: absolute;
+    top: 56px;
+    background-color: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6CB;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Estilo da página chamados */
+
 #calls-container{
     width: 100%;
+    
 }
 
 #calls-container h2{
     text-align: center;
 }
 
+/* Cards dos chamados */
+
 #cards-container{
-    width: 80%;
+    background-color: #ededed;
+    color: rgb(0, 0, 0);
+    border: 6px solid #dedede;
+    border-radius: 10px;
+    width: 96%;
+    max-width: 800px;
+    max-height: 70vh;
+    overflow-y: auto;
     margin: auto;
-    padding: 0;
+    padding: 0 10px 10px 10px;
+    
+    
 }
 
-#cards-container.call-card{
-    padding: 0px;
+#call-card{
+    
 }
+
+.card-title-container {
+    width: 100%;
+    word-wrap: break-word;
+    
+}
+
+.card-title-container h5 {
+    margin: 0 0 2px 0;
+    white-space: normal;
+}
+
+.card-title-container p {
+    font-size: 10px;
+    margin: 0;
+    white-space: normal;
+}
+
+#status-demonstration-ball{
+    border-radius: 100%;
+    width: 8px;
+    height: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.521);
+    margin-bottom: 7px;
+    background-color: #86e5ff;
+    
+}
+
+.card-body p{
+    font-size: 12px;
+    margin: 0px;
+
+}
+
+/* Botão que redireciona para a criação dos chamados*/
+
+#link-create-container{
+    width: 96%;
+    max-width: 800px;
+    margin: auto;
+    text-align: end;
+} 
+
+
+/* Modal das descrições */
+
+.modal-dialog-scrollable .modal-content {
+    max-height: calc(100vh - 1rem);
+    overflow-y: auto;
+}
+
+.modal-body {
+    overflow-y: auto;
+    max-height: 400px; /* Ajuste conforme necessário */
+    word-wrap: break-word; /* Força a quebra de palavras longas */
+}
+
 
 
 
