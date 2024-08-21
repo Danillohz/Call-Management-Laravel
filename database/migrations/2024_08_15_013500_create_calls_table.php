@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('calls', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 80);
-            $table->string('description', 500);
+            $table->string('title', 100);
+            $table->string('description', 1000);
             $table->date('current_date');
             $table->date('future_date');
             $table->date('resolved_at')->nullable();

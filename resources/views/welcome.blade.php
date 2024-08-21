@@ -5,16 +5,18 @@
 <div class="container">
     <h1 class="text-center mt-2">Metricas</h1>
     
-    <!-- Adicionar o gráfico de pizza -->
+    @php
+        // Adicionar o gráfico de pizza
+    @endphp
     <div class="row">
-        <!-- Coluna para o gráfico à esquerda -->
+        
         <div class="col-md-6">
             <h5 class="text-center">Percentual de chamados resolvidos dentro do prazo no mês atual</h5>
             <div class="chart-container">
                 <canvas id="callsPieChart" width="400" height="400"></canvas>
             </div>
         </div>
-        <!-- Outras colunas podem ser adicionadas aqui, se necessário -->
+        
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

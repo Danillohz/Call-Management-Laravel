@@ -10,7 +10,7 @@
     <!-- Importa o css -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- import Bootstrap -->
+    <!-- importa Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -25,10 +25,13 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        @php
+            // Navbar para navegação entre as páginas
+        @endphp
+        <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Teste</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                <button class="navbar-toggler" type="button" data-bs-theme="dark" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -49,12 +52,18 @@
     <main>
         <div class="container-fluid">
             <div class="row">
+                @php
+                    // Exibe uma msg quando chamado
+                @endphp
                 @if (session('msg'))
                     <div class="alert position-absolute alert-success alert-dismissible fade show" role="alert">
                         {{ session('msg') }}
                     </div>
                 @endif
 
+                @php
+                    // Temporizador para a mensagem desaparecer depois de um tempo
+                @endphp
                 <script>
                   document.addEventListener('DOMContentLoaded', function () {
                       setTimeout(function() {

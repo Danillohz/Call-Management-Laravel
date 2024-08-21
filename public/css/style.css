@@ -16,6 +16,10 @@ body{
     padding: 0px;
 }
 
+/* Header */
+
+
+
 /* Estilo das mensagens */
 .msg{
     position: absolute;
@@ -29,11 +33,6 @@ body{
     z-index: 1;
 }
 
-/* Estilo da página inicial */
-#callsPieChart {
-
-}
-
 /* Estilo da página chamados */
 
 #calls-container{
@@ -44,6 +43,8 @@ body{
 #calls-container h2{
     text-align: center;
 }
+
+/* Cards dos chamados */
 
 #cards-container{
     background-color: #ededed;
@@ -57,10 +58,11 @@ body{
     margin: auto;
     padding: 0 10px 10px 10px;
     
+    
 }
 
-#cards-container.call-card{
-    padding: 0px;
+#call-card{
+    
 }
 
 .card-title-container {
@@ -96,8 +98,10 @@ body{
 
 }
 
+/* Botão que redireciona para a criação dos chamados*/
+
 #link-create-container{
-    width: 80%;
+    width: 96%;
     max-width: 800px;
     margin: auto;
     text-align: end;
