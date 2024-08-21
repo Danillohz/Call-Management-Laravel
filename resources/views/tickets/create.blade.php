@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- View para cadastro de um novo chamado -->
-    <div id="tickets-create-container" class="col-md-6 offset-md-3">
+    <div id="tickets-create-container" class="col-md-6 offset-md-3 mt-4">
         <h1>Crie seu chamado</h1>
         <form action="/tickets" method="POST">
             @csrf

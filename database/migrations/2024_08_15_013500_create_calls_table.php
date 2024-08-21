@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title', 100);
             $table->string('description', 1000);
-            $table->date('current_date');
-            $table->date('future_date');
+            $table->date('created_at');
+            $table->date('deadline_date');
             $table->date('resolved_at')->nullable();
 
         });

@@ -10,7 +10,7 @@ use Carbon\Carbon;
 
 class CallController extends Controller
 {
-
+    //calcula o percentual de chamados terminados dentro do prazo
     public function percentual()
     {
         //Obter o início e fim do mês com carbon
@@ -18,11 +18,11 @@ class CallController extends Controller
         $currentMonthEnd = Carbon::now()->endOfMonth();
 
         //total de chamados
-        $totalCalls = Call::whereBetween('current_date', [$currentMonthStart, $currentMonthEnd])->count();
+        $totalCalls = Call::whereBetween('created_at', [$currentMonthStart, $currentMonthEnd])->count();
 
-        $resolvedCallsInTime = Call::whereBetween('current_date', [$currentMonthStart, $currentMonthEnd])
+        $resolvedCallsInTime = Call::whereBetween('created_at', [$currentMonthStart, $currentMonthEnd])
             ->whereNotNull('resolved_at')
-            ->whereColumn('resolved_at', '<=', 'future_date')
+            ->whereColumn('resolved_at', '<=', 'deadline_date')
             ->count();
 
         //Calcula o percentual
@@ -50,6 +50,7 @@ class CallController extends Controller
         return view('tickets.create', ['categories' => $categories, 'situations' => $situations]);
     }
 
+    //Método para atualizar o status do chamado
     public function updateSituation(Request $request, $id)
     {
         $request->validate([
@@ -71,9 +72,10 @@ class CallController extends Controller
         return redirect()->back()->with('msg', 'Situação atualizada com sucesso!');
     }
 
+    //Método para excluir um chamado pelo seu id
     public function destroy($id)
     {
-
+        
         Call::findOrFail($id)->delete();
 
         return redirect('/calls');

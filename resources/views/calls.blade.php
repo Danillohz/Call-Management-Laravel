@@ -14,7 +14,7 @@
             <h2>Chamados</h2>
             @if ($calls->isEmpty())
                 
-                <p class="text-center">Nenhum chamado registrado. (;-;)</p>
+                <p class="text-center">Nenhum chamado registrado (;-;)</p>
                 
             @else
             @foreach ($calls as $index => $call)
@@ -61,12 +61,12 @@
                                 // Formata as dastas para ficarem no padrão brasileiro 
                             @endphp
                             @php
-                                $currentDate = $call->current_date
-                                    ? Carbon::parse($call->current_date)->format('d/m/Y')
+                                $currentDate = $call->created_at
+                                    ? Carbon::parse($call->created_at)->format('d/m/Y')
                                     : 'Data não definida';
 
-                                $futureDate = $call->future_date
-                                    ? Carbon::parse($call->future_date)->format('d/m/Y')
+                                $futureDate = $call->deadline_date
+                                    ? Carbon::parse($call->deadline_date)->format('d/m/Y')
                                     : 'Data não definida';
                             @endphp
                             @php

@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 class Call extends Model
 {
-    protected $dates = [ 'current_date', 'future_date', 'resolved_at'];
+    protected $dates = [ 'created_at', 'deadline_date', 'resolved_at'];
     protected $fillable = ['title', 'description', 'category_id', 'situation_id'];
     public $timestamps = false; // Desativa os timestamps automáticos
     
@@ -17,8 +17,8 @@ class Call extends Model
         parent::boot();
 
         static::creating(function ($model) {
-            $model->current_date = Carbon::now();
-            $model->future_date = Carbon::now()->addDays(3);
+            $model->created_at = Carbon::now();
+            $model->deadline_date = Carbon::now()->addDays(3);
 
             // Define a situação como 'novo' se não for especificada
             if (!$model->situation_id) {
