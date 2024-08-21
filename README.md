@@ -1,66 +1,74 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Diagrama dos relacionamentos das entidades do sistema.
+![Screenshot do Projeto](images/screenshot.png)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Instruções para Instalação do Projeto Call Management Laravel
 
-## About Laravel
+## Requisitos
+Necessário ter em sua máquina:
+- [XAMPP](https://www.apachefriends.org/index.html) (PHP, MySQL, Apache)
+- PHP configurado no PATH do sistema
+- [Composer](https://getcomposer.org/)
+- [Git](https://git-scm.com/)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Como instalar a build em sua máquina
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. **Crie uma pasta e abra no editor**:
+   - Crie uma nova pasta em seu sistema.
+   - Abra essa pasta no VS Code ou no editor de sua preferência.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2. **Clone o repositório do GitHub**:
+   - Abra o terminal do VS Code.
+   - Clone o repositório com o seguinte comando:
+     ```sh
+     git clone https://github.com/Danillohz/Call-Management-Laravel.git
+     ```
 
-## Learning Laravel
+3. **Entre no diretório do projeto**:
+   - Navegue até o diretório do projeto clonado:
+     ```sh
+     cd Call-Management-Laravel
+     ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+4. **Instale as dependências com Composer**:
+   - Execute o comando abaixo para instalar as dependências do projeto:
+     ```sh
+     composer install
+     ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+5. **Configure o arquivo de ambiente**:
+   - Copie o arquivo `.env.example` para `.env`:
+     ```sh
+     cp .env.example .env
+     ```
+   - Dentro do arquivo .env Certifique-se de que DB_USERNAME e DB_PASSWORD condizem  com suas configurações
+    
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+6. **Gere uma nova chave de aplicativo**:
+   - Gere uma nova chave de aplicativo executando:
+     ```sh
+     php artisan key:generate
+     ```
+     
+7. **Execute o XAMPP no modo administrador**:
+   - Clique em start no Mysql e Apache
 
-## Laravel Sponsors
+8. **Execute as migrações do banco de dados**:
+   - Execute as migrações para criar as tabelas do banco de dados:
+     ```sh
+     php artisan migrate
+     ```
+   - Se o comando perguntar se você quer criar o banco de dados, digite `yes`.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+9. **Inicie o servidor local**:
+   - Inicie o servidor local do Laravel:
+     ```sh
+     php artisan serve
+     ```
+   - Clique no link que aparecerá no terminal (`http://127.0.0.1:8000` ou semelhante) para acessar a aplicação.
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Possíveis erros
+1. **PHP não reconhecido pelo VS Code**
+    - Em **Este Computador** clique com o botão direito do mouse e vá para propriedades
+    - Após clique em **Configurações avançadas do sistema** e **Variáveis de Ambiente**
+    - Selecione **Path** clique em editar e depois em novo
+    - Coloque o caminho do PHP do XAMPP (`C:\xampp\php`)
